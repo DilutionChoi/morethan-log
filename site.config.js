@@ -2,7 +2,7 @@ const CONFIG = {
   // profile setting (required)
   profile: {
     name: "Heeseok Choi",
-    image: "/20240616_211823.jpg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    image: "../public/20240616_211823.jpg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "I love language science!",
     bio: "데이터와 언어학",
     email: "tjr9320@gmail.com",
