@@ -77,7 +77,6 @@ const DetailPage: NextPageWithLayout = () => {
     <>
       <MetaConfig {...meta} />
       <Detail />
-      <Utterances issueTerm={meta.url} />
     </>
   )
 }
