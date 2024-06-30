@@ -6,6 +6,7 @@ class MyDocument extends Document {
     return (
       <Html lang={CONFIG.lang}>
         <Head>
+          <link rel="icon" href="/new_logo.ico" />
           <link
             rel="alternate"
             type="application/rss+xml"
