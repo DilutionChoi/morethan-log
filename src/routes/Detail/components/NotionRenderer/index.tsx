@@ -22,6 +22,7 @@ const _NotionRenderer = dynamic(
 )
 
 const Code = dynamic(() =>
+<<<<<<< HEAD
   import("react-notion-x/build/third-party/code").then(async (m) => {
     await Promise.all([
       import('prismjs/components/prism-python.js'),
@@ -29,6 +30,9 @@ const Code = dynamic(() =>
     ])
     return m.Code
   })
+=======
+  import("react-notion-x/build/third-party/code").then(async (m) => m.Code)
+>>>>>>> upstream/main
 )
 
 const Collection = dynamic(() =>
@@ -91,5 +95,8 @@ const StyledWrapper = styled.div`
   }
   .notion-page {
     padding: 0;
+  }
+  .notion-list {
+    width: 100%;
   }
 `
