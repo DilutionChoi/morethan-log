@@ -30,6 +30,7 @@ const Code = dynamic(() =>
     return m.Code
   })
 )
+
 const Collection = dynamic(() =>
   import("react-notion-x/build/third-party/collection").then(
     (m) => m.Collection
