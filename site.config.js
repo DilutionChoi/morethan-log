@@ -12,13 +12,13 @@ const CONFIG = {
   },
   // blog setting (required)
   blog: {
-    title: "Language science blog",
-    description: "welcome to language science blog!",
-    scheme: "dark", // 'light' | 'dark' | 'system'
+    title: "ODYSSEA NOVA",
+    description: "welcome to Odyssea Nova blog!",
+    scheme: "system", // 'light' | 'dark' | 'system'
   },
 
   // CONFIG configration (required)
-  link: "https://lang-sci-log.vercel.app/",
+  link: "https://odyssea-nova.vercel.app/",
   since: 2024, // If leave this empty, current year will be used.
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
   ogImageGenerateURL: "https://og-image-korean.vercel.app", // The link to generate OG image, don't end with a slash
@@ -30,19 +30,19 @@ const CONFIG = {
 
   // plugin configuration (optional)
   googleAnalytics: {
-    enable: true,
+    enable: false,
     config: {
       measurementId: process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID || "",
     },
   },
   googleSearchConsole: {
-    enable: true,
+    enable: false,
     config: {
       siteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
     },
   },
   naverSearchAdvisor: {
-    enable: true,
+    enable: false,
     config: {
       siteVerification: process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION || "",
     },
@@ -50,8 +50,7 @@ const CONFIG = {
   utterances: {
     enable: true,
     config: {
-      repo: // process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
-      "DilutionChoi/blog-comments",
+      repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
