@@ -51,6 +51,7 @@ const CONFIG = {
     enable: true,
     config: {
       repo: process.env.NEXT_PUBLIC_UTTERANCES_REPO || "",
+      "DilutionChoi/morethan-log",
       "issue-term": "og:title",
       label: "💬 Utterances",
     },
