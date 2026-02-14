@@ -3,8 +3,8 @@ const CONFIG = {
   profile: {
     name: "Heeseok Choi",
     image: "/photo.jpg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "I love language science!",
-    bio: "데이터와 언어학",
+    role: "Data Analyst, LLM Engineer",
+    bio: "Iterative Perfectionist",
     email: "tjr9320@gmail.com",
     linkedin: "heeseok-choi-57887523b",
     github: "DilutionChoi",
