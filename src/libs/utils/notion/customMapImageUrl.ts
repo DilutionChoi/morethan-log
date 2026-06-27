@@ -43,12 +43,13 @@ export const customMapImageUrl = (url: string, block: CustomBlock): string => {
   }`
 
   const notionImageUrlV2 = new URL(url)
-  let table = block.value.parent_table === 'space' ? 'block' : block.value.parent_table
+  const actualBlock = (block as any).value || block
+  let table = actualBlock.parent_table === 'space' ? 'block' : actualBlock.parent_table
   if (table === 'collection' || table === 'team') {
     table = 'block'
   }
   notionImageUrlV2.searchParams.set('table', table)
-  notionImageUrlV2.searchParams.set('id', block.value.id)
+  notionImageUrlV2.searchParams.set('id', actualBlock.id)
   notionImageUrlV2.searchParams.set('cache', 'v2')
 
   url = notionImageUrlV2.toString()
