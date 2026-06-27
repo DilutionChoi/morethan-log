@@ -5,29 +5,30 @@ import { idToUuid } from "notion-utils"
 import getAllPageIds from "src/libs/utils/notion/getAllPageIds"
 import getPageProperties from "src/libs/utils/notion/getPageProperties"
 import { TPosts } from "src/types"
-import { CustomExtendedRecordMap } from "src/types/notion.type"
-
 
 /**
  * @param {{ includePages: boolean }} - false: posts only / true: include pages
  */
-
 
 // TODO: react query를 사용해서 처음 불러온 뒤로는 해당데이터만 사용하도록 수정
 export const getPosts = async () => {
   let id = CONFIG.notionConfig.pageId as string
   const api = new NotionAPI()
 
-  const response = await api.getPage(id) as any as CustomExtendedRecordMap
+  const response = await api.getPage(id)
   id = idToUuid(id)
-  const collection = Object.values(response.collection)[0]?.value.value;
-  const block = response.block ;
+  const collectionValue = Object.values(response.collection)[0]?.value as any
+  const collection = collectionValue?.value ?? collectionValue
+  const block = response.block
   const schema = collection?.schema
-  const rawMetadata = block[id].value
+
+  const blockValue = (block[id].value as any)?.value ?? block[id].value
+  const rawMetadata = blockValue
+
   // Check Type
   if (
-    rawMetadata?.value.type !== "collection_view_page" &&
-    rawMetadata?.value.type !== "collection_view"
+    rawMetadata?.type !== "collection_view_page" &&
+    rawMetadata?.type !== "collection_view"
   ) {
     return []
   } else {
@@ -38,11 +39,12 @@ export const getPosts = async () => {
       const id = pageIds[i]
       const properties = (await getPageProperties(id, block, schema)) || null
       // Add fullwidth, createdtime to properties
+      const pageBlockValue = (block[id].value as any)?.value ?? block[id].value
       properties.createdTime = new Date(
-        block[id].value.value?.created_time
+        pageBlockValue?.created_time
       ).toString()
       properties.fullWidth =
-        (block[id].value.value?.format as any)?.page_full_width ?? false
+        (pageBlockValue?.format as any)?.page_full_width ?? false
 
       data.push(properties)
     }
