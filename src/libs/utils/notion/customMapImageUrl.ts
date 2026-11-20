@@ -1,3 +1,4 @@
+import { NOTION_APP_ORIGIN } from 'src/constants'
 import { CustomBlock } from 'src/types/notion.type'
 
 export const customMapImageUrl = (url: string, block: CustomBlock): string => {
@@ -35,10 +36,10 @@ export const customMapImageUrl = (url: string, block: CustomBlock): string => {
   }
 
   if (url.startsWith('/images')) {
-    url = `https://www.notion.so${url}`
+    url = `${NOTION_APP_ORIGIN}${url}`
   }
 
-  url = `https://www.notion.so${
+  url = `${NOTION_APP_ORIGIN}${
     url.startsWith('/image') ? url : `/image/${encodeURIComponent(url)}`
   }`
 

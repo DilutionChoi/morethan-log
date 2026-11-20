@@ -2,6 +2,9 @@ import dynamic from "next/dynamic"
 import Image from "next/image"
 import Link from "next/link"
 import { ExtendedRecordMap } from "notion-types"
+import { defaultMapImageUrl } from "notion-utils"
+import { MapImageUrlFn } from "react-notion-x"
+import { NOTION_APP_ORIGIN } from "src/constants"
 import useScheme from "src/hooks/useScheme"
 // core styles shared by all of react-notion-x (required)
 import "react-notion-x/src/styles.css"
@@ -48,6 +51,12 @@ const Modal = dynamic(
 const mapPageUrl = (id: string) => {
   return "https://www.notion.so/" + id.replace(/-/g, "")
 }
+const mapImageUrl: MapImageUrlFn = (url, block) => {
+  return defaultMapImageUrl(url, block)?.replace(
+    /^https:\/\/www\.notion\.so\/image\//,
+    `${NOTION_APP_ORIGIN}/image/`
+  )
+}
 type Props = {
   recordMap: ExtendedRecordMap
 }
@@ -68,6 +77,7 @@ const NotionRenderer: FC<Props> = ({ recordMap }) => {
           nextLink: Link,
         }}
         mapPageUrl={mapPageUrl}
+        mapImageUrl={mapImageUrl}
       />
     </StyledWrapper>
   )

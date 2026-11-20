@@ -8,6 +8,11 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'app.notion.com',
+        pathname: '/image/**',
+      },
+      {
+        protocol: 'https',
         hostname: '*.googleusercontent.com', // accept all subdomains of googleusercontent.com
       },
       {
