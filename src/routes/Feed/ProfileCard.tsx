@@ -8,7 +8,7 @@ type Props = {}
 
 const ProfileCard: React.FC<Props> = () => {
   return (
-    <StyledWrapper>
+    <StyledWrapper data-nosnippet="">
       <div className="title">
         <Emoji>💻</Emoji> Profile
       </div>

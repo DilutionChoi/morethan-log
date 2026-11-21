@@ -2,9 +2,9 @@ const CONFIG = {
   // profile setting (required)
   profile: {
     name: "Heeseok Choi",
-    image: "/photo.jpg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "Potential Language Scientist",
-    bio: "I love language science!",
+    image: "/photo.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    role: "새로운 오디세이아",
+    bio: "AD ITHACAM",
     email: "tjr9320@gmail.com",
     linkedin: "heeseok-choi-57887523b",
     github: "DilutionChoi",
@@ -13,7 +13,7 @@ const CONFIG = {
   // blog setting (required)
   blog: {
     title: "ODYSSEA NOVA",
-    description: "welcome to Odyssea Nova blog!",
+    description: "나만의 이타카로 가는 길",
     scheme: "system", // 'light' | 'dark' | 'system'
   },
 

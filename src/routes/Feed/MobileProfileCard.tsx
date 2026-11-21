@@ -9,7 +9,7 @@ type Props = {
 
 const MobileProfileCard: React.FC<Props> = () => {
   return (
-    <StyledWrapper>
+    <StyledWrapper data-nosnippet="">
       <div className="top">💻 Profile</div>
       <div className="mid">
         <div className="wrapper">
